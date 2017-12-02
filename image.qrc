@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/function.png</file>
+        <file>image/E.png</file>
+    </qresource>
+</RCC>
