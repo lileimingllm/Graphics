@@ -5,5 +5,5 @@
   - 基于Base类重写的类,然后调用REGISTERGCLASS宏就可也将对象注册到程序中,在图形化编程界面就能看到具体的生成类图形,整个工程支持的消息机制还仅仅只是信号和槽,事件也可以封装成信号的槽的形式,其他的留有扩展,暂时没有实现
 3. 后续 
   - 会继续更新, 同时也希望更多的朋友一起完善
-4. 附图
-  ![image]https://note.youdao.com/yws/res/22/WEBRESOURCEdc7e9eff262d8915a6879950d54b9ea3
+4. 附图 
+  ![image](https://note.youdao.com/yws/res/22/WEBRESOURCEdc7e9eff262d8915a6879950d54b9ea3)
