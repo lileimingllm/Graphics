@@ -27,7 +27,7 @@ void Print::exec(IN in, OUT out)
     IN i = out;
     OUT o = in;
     this_thread::sleep_for(chrono::milliseconds(200));
-    emit printFinished(i, o);
+    emit printFinished(i,o);
 }
 
 
