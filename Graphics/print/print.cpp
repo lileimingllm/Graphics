@@ -23,6 +23,7 @@ void Print::exec(IN in, OUT out)
         }
     }
     param.window->getTitle()->setTitle("hello");
+    qDebug() << "Hello Graphics";
     IN i = out;
     OUT o = in;
     this_thread::sleep_for(chrono::milliseconds(200));
@@ -37,7 +38,7 @@ void Print::exec(IN in, OUT out)
 void Print::setParam(ClassParam *param)
 {
     param->className = "Print";
-    param->infielddsc = QStringList()<<"输入打印";
+    param->infielddsc = QStringList()<<"打印Hello";
     param->outfielddsc = QStringList()<<"无输出";
     param->object = this;
     param->signalNames = QStringList() <<"printFinished";
