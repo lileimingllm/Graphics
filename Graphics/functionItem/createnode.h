@@ -10,7 +10,7 @@ class CreateNode
 {
 public:
     /**
-     * @brief CreateNode        构造器
+     * @brief CreateNode        构造器,创造一个ITEMWIDGET
      * @param functionName
      * @param type
      */
