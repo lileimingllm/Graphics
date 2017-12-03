@@ -548,7 +548,9 @@ void InputField::createField()
     if (FIELD_TYPE::LINEEDIT == dType){
         QLineEdit * lineEdit = new QLineEdit(this);
         widget = lineEdit;
+        lineEdit->setFixedWidth(60);
         layout->addWidget(lineEdit);
+        lineEdit->setText(mFields.size()?mFields.at(0):"");
     } else if (FIELD_TYPE::CHECKBOX == dType) {
         QCheckBox * checkBox = new QCheckBox(this);
         if (mFields.size()){
@@ -724,6 +726,8 @@ void OutputField::createField()
     if (FIELD_TYPE::LINEEDIT == dType){
         QLineEdit * lineEdit = new QLineEdit(this);
         widget = lineEdit;
+        lineEdit->setFixedWidth(60);
+        lineEdit->setText(mFields.size()?mFields.at(0):"");
         layout->addWidget(lineEdit);
     } else if (FIELD_TYPE::CHECKBOX == dType) {
         QCheckBox * checkBox = new QCheckBox(this);

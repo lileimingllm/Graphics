@@ -1,5 +1,6 @@
 #include "baseclass.h"
 #include <print.h>
+#include <printfromui.h>
 
 Base::Base(QObject *parent) : QObject(parent)
 {
@@ -20,5 +21,6 @@ void globalParam::init()
 {
     REGISTER_GCLASS(Print,"Print");
     REGISTER_GCLASS(Print,"Print1");
+    REGISTER_GCLASS(PrintFromUI,"PrintFromUI");
 }
 

@@ -1,7 +1,9 @@
 INCLUDEPATH += $$PWD
 
 SOURCES += \
-    $$PWD/print.cpp
+    $$PWD/print.cpp \
+    $$PWD/printfromui.cpp
 
 HEADERS += \
-    $$PWD/print.h
+    $$PWD/print.h \
+    $$PWD/printfromui.h

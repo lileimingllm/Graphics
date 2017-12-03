@@ -86,17 +86,8 @@ void GraphicsScene::exec()
             break;
         }
     }
-    if (first){
-        for (OutputMarkRelation *o : mConnectedRelative){
-            if (o->window == first){
-                signalConnect();
-                excute(o->window, nullptr, nullptr);
-                break;
-            }
-        }
-    }else{
-        QMessageBox::warning (nullptr, "警告!","没有开始函数,请创建...");
-    }
+    signalConnect();
+    excute(first, nullptr, nullptr);
 }
 
 /**
@@ -447,10 +438,12 @@ void GraphicsScene::addAInputSignal(InputMark *mark)
 void GraphicsScene::signalConnect()
 {
     //先断开以前的连接
-    for(SIGNALSLOT s : AConnected){
-        disconnect(s.sender,s.Signal.toStdString().c_str(),
-                   s.recever, s.Slot.toStdString().c_str());
+    for(int i=AConnected.size()-1; i>=0; --i){
+        disconnect(AConnected.at(i).sender,AConnected.at(i).Signal.toStdString().c_str(),
+                   AConnected.at(i).recever, AConnected.at(i).Slot.toStdString().c_str());
+        AConnected.removeAt(i);
     }
+    AConnected.clear();
     //添加
     for (OutputMarkRelation* o : mConnectedRelative){
         if (o->outputmark->getType() == DISPLAY_TYPE::SIG){
