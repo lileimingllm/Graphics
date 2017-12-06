@@ -4,7 +4,7 @@ ItemWindow *CreateNode::create(ClassParam param)
 {
     ItemWindow * window = new ItemWindow(param);
     window->saveSelf(window);
-    window->setFuncName(param.className);
+    window->setFuncName(param.ObjectName);
     InputItem * input{ nullptr };
     OutputItem * output { nullptr };
     switch (param.type) {

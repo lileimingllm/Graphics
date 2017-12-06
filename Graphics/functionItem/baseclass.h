@@ -21,7 +21,7 @@ using OUT = QList<QVariant>*;
 class Base;
 class ItemWindow;
 struct ClassParam {
-    QString className;  //类名
+    QString ObjectName;  //类名
     QStringList Signals;//信号
     QStringList signalNames;    //信号名
     QString slot;               //槽
@@ -80,14 +80,11 @@ public:
     static void init();
 };
 
-#define REGISTER_GCLASS(Class,ObjectName) {for(ClassParam p:globalParam::allParams){\
-    if(p.className==ObjectName){QMessageBox::critical(nullptr,"编译错误",QString("存在多个").append(ObjectName).append("对象!"));exit(0);}\
-    }\
-    Base*c=new Class;\
-    ClassParam& param=c->getParam();\
+#define REGISTER_GCLASS(Class,objectName) {for(ClassParam p:globalParam::allParams){\
+    if(p.ObjectName==objectName){QMessageBox::critical(nullptr,"编译错误",QString("存在多个").append(objectName).append("对象!"));exit(0);}}\
+    Base*c=new Class;ClassParam& param=c->getParam();\
     if(param.InCustomWidget)param.InCustomWidget->setFixedSize(100,100);\
     if(param.OutCustomWidget)param.OutCustomWidget->setFixedSize(100,100);\
-    param.className=ObjectName;\
-    globalParam::allParams.append(param);}
+    param.ObjectName=objectName;globalParam::allParams.append(param);}
 
 #endif // BASECLASS_H

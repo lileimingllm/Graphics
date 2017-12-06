@@ -1,6 +1,7 @@
 #include "baseclass.h"
 #include <print.h>
 #include <printfromui.h>
+#include <serialport.h>
 
 Base::Base(QObject *parent) : QObject(parent)
 {
@@ -19,8 +20,8 @@ QList<ClassParam> globalParam::allParams;
  */
 void globalParam::init()
 {
-    REGISTER_GCLASS(Print,"Print");
-    REGISTER_GCLASS(Print,"Print1");
-    REGISTER_GCLASS(PrintFromUI,"PrintFromUI");
+    REGISTER_GCLASS(Print,"打印信息");
+    REGISTER_GCLASS(PrintFromUI,"打印信息fromUI");
+    REGISTER_GCLASS(Serialport,"串口");
 }
 

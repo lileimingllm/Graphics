@@ -5,7 +5,6 @@ include($$PWD/graphicsscene/graphicsscene.pri)
 include($$PWD/itemwindow/itemwindow.pri)
 include($$PWD/functionItem/functionitem.pri)
 include($$PWD/connectline/connectline.pri)
-include($$PWD/print/print.pri)
 
 SOURCES +=
 

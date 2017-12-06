@@ -255,7 +255,7 @@ void GraphicsScene::initFunction()
     QString sig;
     for(ClassParam para : globalParam::allParams){
         for (QString signalName : para.signalNames){
-            sig = para.className+":"+signalName;
+            sig = para.ObjectName+":"+signalName;
             SignalMap.insert(sig, para);
         }
     }
@@ -263,7 +263,7 @@ void GraphicsScene::initFunction()
     if (IOs.size ()>0){
         QMenu * m = new QMenu;
         for (ClassParam p : IOs){
-            QAction * action = new QAction(p.className);
+            QAction * action = new QAction(p.ObjectName);
             action->setIcon (QIcon(":/image/function.png"));
             m->addAction(action);
             createInfo.insert (action, p);
@@ -334,7 +334,7 @@ void GraphicsScene::deleteItem(ItemWindow *window)
     QMap<QAction*, ClassParam>::iterator iter = createInfo.begin();
     for (; iter != createInfo.end(); ++iter)
     {
-        if (iter.value().className == window->getParam().className){
+        if (iter.value().ObjectName == window->getParam().ObjectName){
             iter.key()->setObjectName("FUNC:0");
             break;
         }
@@ -617,7 +617,7 @@ void GraphicsScene::createFirstNode()
     }
     ClassParam param;
     param.type = FIRST;
-    param.className = "开始";
+    param.ObjectName = "开始";
     param.outfielddsc = QStringList()<<"执行";
     ItemWindow * window = CreateNode::create (param);
     window->setNoAddButton(true);
@@ -650,7 +650,7 @@ void GraphicsScene::deleteLineSlot()
 void GraphicsScene::createSignalSlot()
 {
     ClassParam param;
-    param.className = "信号";
+    param.ObjectName = "信号";
     param.type = ONLY_OUTPUT;
     param.OutFieldtype = FIELD_TYPE::COMBOBOX;
     ItemWindow * window = CreateNode::create(param);

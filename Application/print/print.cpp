@@ -37,7 +37,7 @@ void Print::exec(IN in, OUT out)
  */
 void Print::setParam(ClassParam *param)
 {
-    param->className = "Print";
+    param->ObjectName = "Print";
     param->infielddsc = QStringList()<<"打印Hello";
     param->outfielddsc = QStringList()<<"无输出";
     param->object = this;
