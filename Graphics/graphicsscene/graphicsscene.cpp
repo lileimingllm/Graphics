@@ -341,7 +341,10 @@ void GraphicsScene::deleteItem(ItemWindow *window)
     }
     mAllWindow.removeOne (window);
     removeItem(window);
-    delete window;
+    //这里如果是自定义窗口，不能释放，应为layout在回收时会将自定义显示窗口资源一起回收了
+    if (window->getParam().InFieldtype != FIELD_TYPE::CUSTOM &&
+            window->getParam().OutFieldtype!=FIELD_TYPE::CUSTOM)
+        delete window;
     update();
 }
 

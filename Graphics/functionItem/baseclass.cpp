@@ -22,6 +22,8 @@ void globalParam::init()
 {
     REGISTER_GCLASS(Print,"打印信息");
     REGISTER_GCLASS(PrintFromUI,"打印信息fromUI");
-    REGISTER_GCLASS(Serialport,"串口");
+    REGISTER_GCLASS(Serialport,"串口1");
+    REGISTER_GCLASS(Serialport,"串口2");
+    REGISTER_GCLASS(Serialport,"串口3");
 }
 

@@ -1,4 +1,5 @@
 #include "serialport.h"
+#include <serialsetwidget.h>
 
 Serialport::Serialport(QObject *parent) :
     Base(parent)
@@ -22,5 +23,12 @@ void Serialport::exec(IN in, OUT out)
  */
 void Serialport::setParam(ClassParam *param)
 {
-
+//    param->infielddsc = QStringList()<<"请输入";
+    param->object = this;
+    param->InFieldtype = FIELD_TYPE::CUSTOM;
+    param->outfielddsc = QStringList() << "数据";
+    param->signalNames = QStringList()<<"sendfinished"<<"received";
+    param->Signals = QStringList()<<SIGNAL(sendfinished())<<SIGNAL(received(IN,OUT));
+    param->InCustomWidget = new SetWidget(new SerialSetWidget);
+    param->slot = SLOT(exec(IN,OUT));
 }

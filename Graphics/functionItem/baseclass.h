@@ -83,8 +83,8 @@ public:
 #define REGISTER_GCLASS(Class,objectName) {for(ClassParam p:globalParam::allParams){\
     if(p.ObjectName==objectName){QMessageBox::critical(nullptr,"编译错误",QString("存在多个").append(objectName).append("对象!"));exit(0);}}\
     Base*c=new Class;ClassParam& param=c->getParam();\
-    if(param.InCustomWidget)param.InCustomWidget->setFixedSize(100,100);\
-    if(param.OutCustomWidget)param.OutCustomWidget->setFixedSize(100,100);\
+    if(param.InCustomWidget)param.InCustomWidget->setFixedSize(100,110);\
+    if(param.OutCustomWidget)param.OutCustomWidget->setFixedSize(100,110);\
     param.ObjectName=objectName;globalParam::allParams.append(param);}
 
 #endif // BASECLASS_H

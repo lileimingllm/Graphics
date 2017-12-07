@@ -6,6 +6,7 @@
 #include <graphicsscene.h>
 #include <itemwindow.h>
 #include <QMainWindow>
+#include <form.h>
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -17,6 +18,9 @@ int main(int argc, char *argv[])
     QMainWindow window;
     window.setCentralWidget(view);
     window.show();
+
+    Form f;
+    f.show();
 
     return a.exec();
 }
