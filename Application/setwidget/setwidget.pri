@@ -3,12 +3,7 @@
 INCLUDEPATH += $$PWD
 
 SOURCES += \
-    $$PWD/setwidget.cpp \
-    $$PWD/form.cpp
+    $$PWD/setwidget.cpp
 
 HEADERS += \
-    $$PWD/setwidget.h \
-    $$PWD/form.h
-
-FORMS += \
-    $$PWD/form.ui
+    $$PWD/setwidget.h
